@@ -1,5 +1,5 @@
 
-import { throttle } from "./throttle.mjs";
+import { throttle } from "https://cdn.jsdelivr.net/gh/cdpi/cdpi.github.io/scripts/throttle.mjs";
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -106,7 +106,6 @@ class ColorSelector extends EventTarget
 
 			event.color = this.color;
 
-			//this.dispatchEvent(new Event("select", {color: this.color.toString()}));
 			this.dispatchEvent(event);
 			};
 		}
@@ -115,8 +114,8 @@ class ColorSelector extends EventTarget
 		{
 		return throttle(20, e =>
 			{
-			this.color.hue = Math.floor(e.clientX * 360 / window.innerWidth);
-			this.color.saturation = Math.floor(e.clientY * 100 / window.innerHeight);
+			this.color.hue = Math.floor(e.clientX * 360 / this.element.clientWidth);
+			this.color.lightness = Math.floor(e.clientY * 100 / this.element.clientHeight);
 
 			this.changeBackgroundColor();
 			});
@@ -126,7 +125,7 @@ class ColorSelector extends EventTarget
 		{
 		return throttle(10, e =>
 			{
-			this.color.lightness = this.color.lightness + ((e.deltaY > 0) ? 1 : -1);
+			this.color.saturation += ((e.deltaY > 0) ? 1 : -1);
 
 			this.changeBackgroundColor();
 			});

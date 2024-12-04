@@ -16,7 +16,32 @@
 
 <aside>ASIDE</aside>
 
-<script type="module" src="generator.mjs"></script>
+<script type="module">
+
+import { Color, ColorSelector, Palette } from "./palette.mjs";
+
+let palette = new Palette(document.querySelector("aside"));
+
+let options =
+	{
+	element: document.documentElement,
+	palette: palette,
+	saturation:
+		{
+		step: 1,
+		alt: 10
+		}
+	};
+
+//let selector = new ColorSelector(document.querySelector("main"));
+let selector = new ColorSelector(document.documentElement);
+
+selector.addEventListener("select", e =>
+	{
+	palette.c(e.color);
+	});
+
+</script>
 
 </body>
 </html>
