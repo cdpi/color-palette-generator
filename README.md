@@ -10,6 +10,7 @@ c'est element.innerWidth
 
 handle window resizs
 
-### Branches Git
 
-C'est tellement pratique pour moi qui fout toujours le bordel...
+
+
+2 400

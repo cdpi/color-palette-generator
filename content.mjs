@@ -1,6 +1,4 @@
 
-// https://fr.wikipedia.org/wiki/Lorem_ipsum
-
 const LOREM_IPSUM =
 [
 `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet,
